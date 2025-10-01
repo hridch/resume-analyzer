@@ -17,7 +17,13 @@ It highlights strengths, gaps, and skill matches while providing scores, keyword
 
 ---
 
-## 🛠️ Installation
+# ⚡ Running the App
+
+There are two recommended ways to run Resume Analyzer:  
+
+---
+
+## ▶️ Running Locally with Python
 
 Clone the repository:
 ```bash
@@ -25,7 +31,7 @@ git clone https://github.com/yourusername/resume-analyzer.git
 cd resume-analyzer
 ```
 
-Create a virtual environment (optional but recommended):
+Create a virtual environment (recommended):
 ```bash
 python -m venv venv
 source venv/bin/activate   # On Mac/Linux
@@ -37,25 +43,46 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
----
-
-## ▶️ Usage
-
 Run the Streamlit app:
 ```bash
 streamlit run app.py
 ```
 
-Then open the provided local URL in your browser.
+👉 Open the provided local URL in your browser.
 
 ---
 
-## 📦 Requirements
+## 🐳 Running with Docker Compose
 
-- Python 3.8+
-- See `requirements.txt` for dependencies
+If you prefer containerization (no Python setup required), you can use Docker Compose.  
+
+### Development Mode  
+Ideal while actively building: automatically reloads when you edit source files.  
+```bash
+docker-compose -f docker-compose.dev.yaml up --build
+```
+👉 Open [http://localhost:8501](http://localhost:8501).
+
+### Production Mode  
+Best for deployment: optimized image, runs in the background.  
+```bash
+docker-compose -f docker-compose.prod.yaml up --build -d
+```
+
+Stop production later with:
+```bash
+docker-compose -f docker-compose.prod.yaml down
+```
 
 ---
 
-## 💡 Notes 
-Make sure you have any required API keys set up inside `AIModel`.
+# 📦 Requirements
+
+- **Local setup:** Python 3.8+  
+- **Containerized setup:** Docker & Docker Compose  
+- See `requirements.txt` for dependencies (used in the local setup)
+
+---
+
+# 💡 Notes
+- Ensure any required API keys are configured inside `AIModel`. 
