@@ -1,0 +1,8 @@
+services:
+  resume-analyzer:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: resume-analyzer
+    ports:
+      - "8501:8501"
